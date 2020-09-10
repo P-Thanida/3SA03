@@ -4,7 +4,7 @@ function App() {
  return (
  <div>
   Hello World {2+5} <br/>
-  Nong beam
+  Nong pang
  </div>
  );
 }
