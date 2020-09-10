@@ -1,11 +1,16 @@
 import React from 'react';
+import CharacterCard from "./component/characterCard"
 import './App.css';
+
+const word = "Hello";
 function App() {
  return (
  <div>
-  Hello World {2+5} <br/>
-  Nong beam
+ {
+ Array.from(word).map((c, i) => <CharacterCard value={c} key={i}/>)
+ }
  </div>
  );
 }
+
 export default App;
