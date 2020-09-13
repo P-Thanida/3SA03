@@ -1,16 +1,9 @@
-import React from 'react';
-import CharacterCard from "./component/characterCard"
-import './App.css';
-
-const word = "Hello";
+import CharacterCard from './CharacterCard';
 function App() {
- return (
- <div>
- {
- Array.from(word).map((c, i) => <CharacterCard value={c} key={i}/>)
- }
- </div>
- );
+    return (
+        <div>
+            <CharacterCard value="h" />
+            <CharacterCard value="i" />
+        </div>
+    );
 }
-
-export default App;
