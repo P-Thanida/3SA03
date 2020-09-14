@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
-
 const refreshPage = () => window.location.reload(false);
+
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(word))
@@ -44,8 +44,8 @@ export default function WordCard(props) {
             } else {
                 console.log('reset')
                 setState({ ...state, guess: '', attempt: state.attempt + 1 })
-
                 refreshPage()
+
             }
         }
     }
