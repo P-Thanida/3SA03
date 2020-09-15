@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CharacterCard from './CharacterCard';
 import _ from 'lodash';
-const refreshPage = () => window.location.reload(false);
+// import { useState, useEffect } from '../node_modules/react/cjs/react.production.min';
 
 const prepareStateFromWord = (given_word) => {
     let word = given_word.toUpperCase()
@@ -14,7 +14,9 @@ const prepareStateFromWord = (given_word) => {
         completed: false
     }
 }
+
 export default function WordCard(props) {
+    // const activationHandler = c => { console.log(`${c} has been activated.`) }
     const [state, setState] = useState({
         word: '',
         chars: '',
@@ -22,6 +24,7 @@ export default function WordCard(props) {
         guess: '',
         completed: false
     })
+
     useEffect(() => {
         let data = prepareStateFromWord(props.value);
         setState({
@@ -32,7 +35,8 @@ export default function WordCard(props) {
             guess: data.guess,
             completed: data.completed
         })
-    }, [])
+    },[])
+
     const activationHandler = (c) => {
         console.log(`${c} has been activated.`)
         let guess = state.guess + c
@@ -44,18 +48,17 @@ export default function WordCard(props) {
             } else {
                 console.log('reset')
                 setState({ ...state, guess: '', attempt: state.attempt + 1 })
-                refreshPage()
-
             }
         }
     }
+
+
     return (
         <div>
-            {Array.from(state.chars).map((c, i) => <CharacterCard value={c} key={i}
-                activationHandler={activationHandler}
-                attempt={state.attempt} />)}
+            {Array.from(state.chars).map((c, i) => <CharacterCard value={c} key={i} 
+            activationHandler={activationHandler} 
+            attempt={state.attempt}/>)}
             {/* <CharacterCard value={c} key={i} activationHandler={activationHandler}/> */}
         </div>
     );
-    
 }
