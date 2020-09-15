@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App App-header">
-        <WordCard value = "hello"/> {/* ส่ง props ที่มีค่าเป็น hello ส่งไปยัง Component Word Card */}
+        <WordCard value = "hello"/> 
     </div>
   );
 
