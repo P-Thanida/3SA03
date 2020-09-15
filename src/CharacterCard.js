@@ -2,9 +2,7 @@ import React, { useState,useRef,useEffect} from 'react';
 export default function CharacterCard(props) {
  const [active, setActive] = useState(false);
  const attemptRef = useRef(props.attempt);
-//  const activate = () => {
-//  setActive(true)
-//  }
+
 useEffect(() => {
     if(attemptRef.current != props.attempt){
     setActive(false)
